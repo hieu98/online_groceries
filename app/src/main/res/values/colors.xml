@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="transparent">@android:color/transparent</color>
+    <color name="main_color">#53B175</color>
+    <color name="btn_google">#5383EC</color>
+    <color name="btn_facebook">#4A66AC</color>
+    <color name="btn_phone">#FFC300</color>
+
 </resources>

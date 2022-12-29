@@ -26,5 +26,27 @@
         android:id="@+id/loginFragment"
         android:name="com.hdt.onlinegroceries.ui.introduce.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_loginPhoneFragment"
+            app:destination="@id/loginPhoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPhoneFragment"
+        android:name="com.hdt.onlinegroceries.ui.introduce.login.loginphone.LoginPhoneFragment"
+        android:label="LoginPhoneFragment"
+        tools:layout="@layout/fragment_login_phone">
+        <action
+            android:id="@+id/action_loginPhoneFragment_to_enterCodeFragment"
+            app:destination="@id/enterCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterCodeFragment"
+        android:name="com.hdt.onlinegroceries.ui.introduce.login.loginphone.EnterCodeFragment"
+        android:label="fragment_enter_code"
+        tools:layout="@layout/fragment_enter_code" >
+        <action
+            android:id="@+id/action_enterCodeFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
 </navigation>

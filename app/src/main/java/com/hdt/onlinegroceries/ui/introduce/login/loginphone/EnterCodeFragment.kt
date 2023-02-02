@@ -1,7 +1,5 @@
 package com.hdt.onlinegroceries.ui.introduce.login.loginphone
 
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -18,7 +16,6 @@ import com.hdt.onlinegroceries.databinding.FragmentEnterCodeBinding
 import com.hdt.onlinegroceries.extension.onClick
 import com.hdt.onlinegroceries.extension.stringArgument
 import com.hdt.onlinegroceries.ui.MainActivity
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 
@@ -60,7 +57,6 @@ class EnterCodeFragment  : BaseFragment<FragmentEnterCodeBinding, MainActivity>(
                 }
             }
             override fun onVerificationFailed(e: FirebaseException) {
-                Log.d("12221", e.message!!)
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_LONG).show()
             }
         }
@@ -78,18 +74,11 @@ class EnterCodeFragment  : BaseFragment<FragmentEnterCodeBinding, MainActivity>(
     }
 
     private fun verifyCode(code: String) {
-        // below line is used for getting
-        // credentials from our verification id and code.
         val credential = PhoneAuthProvider.getCredential(verificationId, code)
-
-        // after getting credential we are
-        // calling sign in method.
         signInWithCredential(credential)
     }
 
     private fun signInWithCredential(credential: PhoneAuthCredential) {
-        // inside this method we are checking if
-        // the code entered is correct or not.
         mAuth!!.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -98,7 +87,6 @@ class EnterCodeFragment  : BaseFragment<FragmentEnterCodeBinding, MainActivity>(
                 } else {
                     // if the code is not correct then we are
                     // displaying an error message to the user.
-                    Log.d("123456", "signInWithCredential: false ")
                 }
             }
     }

@@ -23,7 +23,6 @@ class LoginPhoneFragment : BaseFragment<FragmentLoginPhoneBinding, MainActivity>
             btnBack.onClick { popBackStack() }
 
             btnNextEnterCode.onClick {
-                Log.d("123456","+84" + phoneNumber.text.toString())
                 navigateTo(
                     R.id.action_loginPhoneFragment_to_enterCodeFragment,
                     bundleOf( "phone" to "+84" + phoneNumber.text.toString()),
